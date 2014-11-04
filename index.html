@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Minesweeper</title>
+        <link rel="stylesheet" href="style/styles.css">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+    </head>
+    <body>
+        <main-manu id="main-menu"></main-manu>
+        <vms-pages>
+            <vms-page data-route="home show"></vms-page>
+            <vms-page data-route="volunteers"></vms-page>
+            <vms-page data-route="communication"></vms-page>
+            <vms-page data-route="volunteers-details"></vms-page>
+        </vms-pages>
+        <script src="vms.js"></script>
+        <script>
+            (function() {
+                var vms = new Vms();
+            })()
+        </script>
+    </body>
+</html>
