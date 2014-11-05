@@ -7,17 +7,19 @@
         <meta name="viewport" content="width=device-width, user-scalable=no">
     </head>
     <body>
-        <link rel="import" href="bower_components/core-elements/core-elements.html">
+        <script src="libs/webcomponents-lite.min.js"></script>
         <script src="vms.js"></script>
         <script src="components/main-menu.js"></script>
 
         <main-menu id="main-menu"></main-menu>
+
         <vms-pages>
-            <vms-page data-route="home show"></vms-page>
+            <vms-page data-route="home"></vms-page>
             <vms-page data-route="volunteers"></vms-page>
             <vms-page data-route="communication"></vms-page>
             <vms-page data-route="volunteers-details"></vms-page>
         </vms-pages>
+
         <script>
             (function() {
                 var vms = new Vms();
