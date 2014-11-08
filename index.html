@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Minesweeper</title>
+        <title>Event Management System</title>
         <link rel="stylesheet" href="style/styles.css">
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, user-scalable=no">
+        <script src="bower_components/platform/platform.js"></script>
+        <link rel="import" href="bower_components/polymer/polymer.html">
+
+        <link rel="import" href="templates/main-menu.html">
     </head>
     <body>
-        <script src="libs/webcomponents-lite.min.js"></script>
         <script src="vms.js"></script>
-        <script src="components/main-menu.js"></script>
 
         <main-menu id="main-menu"></main-menu>
 
         <vms-pages>
-            <vms-page data-route="home"></vms-page>
-            <vms-page data-route="volunteers"></vms-page>
-            <vms-page data-route="communication"></vms-page>
-            <vms-page data-route="volunteers-details"></vms-page>
+
         </vms-pages>
 
         <script>
