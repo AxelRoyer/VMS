@@ -1,7 +1,6 @@
 {
-  "name": "Minesweeper",
+  "name": "Volunteer Management System",
   "version": "0.0.1",
-  "description": "web minesweeper",
   "main": "index.html",
   "author": "",
   "license": "ISC",

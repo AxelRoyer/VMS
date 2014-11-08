@@ -1,0 +1,20 @@
+<polymer-element name="main-menu">
+    <template>
+        <h1>{{nameColor}}</h1>
+    </template>
+
+    <script>
+        Polymer({
+            created: function() {
+                console.log("created");
+                this.nameColor = "red";
+            },
+            attached: function() {
+                console.log("attached");
+            },
+            populate: function(items) {
+                console.log("call populate", items)
+            }
+        })
+    </script>
+</polymer-element>
