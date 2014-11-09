@@ -50,7 +50,8 @@ html, body {
   height: 100%; }
 
 body {
-  font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif; }
+  font-family: 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  background-color: red; }
 
 * {
   box-sizing: border-box; }

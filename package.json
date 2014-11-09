@@ -1,5 +1,5 @@
 {
-  "name": "Volunteer Management System",
+  "name": "VMS",
   "version": "0.0.1",
   "main": "index.html",
   "author": "",
@@ -13,7 +13,6 @@
     "gulp-ruby-sass": "^0.7.1"
   },
   "dependencies": {
-    "gulp-sass": "^1.2.2",
-    "node-bourbon": "^1.2.3"
+    "gulp-sass": "^1.2.2"
   }
 }

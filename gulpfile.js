@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var bourbon = require('node-bourbon');
+var jasmine = require('gulp-jasmine');
 
 var paths = {};
 
@@ -25,6 +26,11 @@ gulp.task('sass-watch', function () {
 		.on("error", errorAlert)
 		.pipe(gulp.dest('./style'));
 	gulp.watch(paths.styles, ['sass-build'])
+});
+
+gulp.task('tests', function () {
+	return gulp.src('tests/*.js')
+		.pipe(jasmine());
 });
 
 gulp.task('default', ['sass-watch']);
