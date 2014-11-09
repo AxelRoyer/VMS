@@ -1,32 +1,48 @@
 <polymer-element name="main-menu">
     <template>
         <link rel="stylesheet" href="../style/styles.css">
-        <h1>{{nameColor}}</h1>
+        <template bind="{{items}}">
+            <ul>
+            <template repeat>
+              <li><a href="#{{link}}">{{label}}</a></li>
+            </template>
+            </ul>
+        </template>
     </template>
     <script>
         Polymer({
             created: function () {
-                console.log("created");
-                this.nameColor = "red";
+                this.items = [];
             },
-            attached: function () {
-                console.log("attached");
-            },
-            populate: function (items) {
-                console.log("call populate", items)
-            },
-            addItem: function (item) {
 
+            populate: function (items) {
+                this.items = items;
             },
-            removeItemByLabel: function (label) {
-                if (label === "test") {
-                    return "ok";
+
+            addItem: function (item, index) {
+                if (index !== undefined) {
+                    this.items.splice(index, 0, item);
                 } else {
-                    return "nok";
+                    this.items.push(item);
                 }
             },
-            removeItemByIndex: function (index) {
 
+            removeItemByLabel: function (label) {
+                var index;
+                for (var i = this.items.length - 1; i >= 0; i--) {
+                    if (label === this.items[i].label){
+                        index = i;
+                        break;
+                    }
+                };
+
+                this.removeItemByIndex(index);
+            },
+
+            removeItemByIndex: function (index) {
+                if (index !== undefined) {
+                    this.items.splice(index, 1);
+                }
             }
         })
     </script>
