@@ -5,20 +5,13 @@
         <link rel="stylesheet" href="style/styles.css">
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, user-scalable=no">
-        <script src="bower_components/platform/platform.js"></script>
-        <link rel="import" href="bower_components/polymer/polymer.html">
-
-        <link rel="import" href="components/main-menu.html">
     </head>
     <body>
-        <script src="vms.js"></script>
 
         <main-menu id="main-menu"></main-menu>
 
-        <vms-pages>
-
-        </vms-pages>
-
+        <script src="sources/main-menu.js"></script>
+        <script src="sources/vms.js"></script>
         <script>
             (function() {
                 var vms = new Vms();
