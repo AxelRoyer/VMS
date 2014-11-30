@@ -1,0 +1,16 @@
+{
+  "rights": {
+    "myProfile": [
+      true, true
+    ],
+    "volunteers": [
+      true, true
+    ],
+    "stock": [
+      true, true
+    ],
+    "parameters":[
+      true, true
+    ]
+  }
+}

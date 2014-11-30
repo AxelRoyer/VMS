@@ -46,7 +46,7 @@ gulp.task('js-build', function() {
 });
 
 gulp.task('js-watch', function() {
-	gulp.watch(paths.jsFiles, 'browserify');
+	gulp.watch(paths.jsFiles, ['js-build']);
 });
 
 function errorAlert (error) {
