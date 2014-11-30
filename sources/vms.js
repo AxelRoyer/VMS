@@ -1,4 +1,5 @@
-'use strict';
-var Vms = function() {
-    console.log("new VMS");
-};
+var mainMenu = require("./main-menu");
+
+(function() {
+    console.log("new app", mainMenu);
+})();

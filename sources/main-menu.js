@@ -5,7 +5,7 @@ MainMenuProto.createdCallback = function() {
 };
 
 MainMenuProto.attachedCallback = function() {
-    console.log("main menu attached callback");
+    console.log("main menu attached callback toto");
 
     var content = document.createElement("div");
     content.textContent = "inside main menu";
@@ -27,3 +27,5 @@ MainMenuProto.removeItem = function(label) {
 MainMenu = document.registerElement('main-menu', {
     prototype: MainMenuProto
 });
+
+module.exports = MainMenuProto;
