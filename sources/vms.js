@@ -1,5 +1,6 @@
 var parametersService = require("./parametersService");
 var mainMenu = require("./main-menu");
+require("./services/templateService");
 
 var mainMenuItems = [
     {

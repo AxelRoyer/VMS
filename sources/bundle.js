@@ -1,6 +1,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var parametersService = require("./parametersService");
 var mainMenu = require("./main-menu");
+require("./services/templateService");
 
 var mainMenuItems = [
     {
@@ -45,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var vms = new Vms();
 }, false);
 
-},{"./main-menu":2,"./parametersService":3}],2:[function(require,module,exports){
+},{"./main-menu":2,"./parametersService":3,"./services/templateService":4}],2:[function(require,module,exports){
 var MainMenuProto = Object.create(HTMLElement.prototype);
 
 MainMenuProto.createdCallback = function() {
@@ -55,6 +56,7 @@ MainMenuProto.createdCallback = function() {
 
 MainMenuProto.attachedCallback = function() {
     console.log("main menu attached callback");
+    this.appendChild(clone);
 };
 
 MainMenuProto.addItem = function(options) {
@@ -105,4 +107,14 @@ ParametersService.getParameters = function() {
 };
 
 module.exports = ParametersService;
+},{}],4:[function(require,module,exports){
+var templateService = {};
+
+templateService.getTemplate = function(id) {
+    var link = document.querySelector('link[rel="import"]');
+    var template = link.import.querySelector("template[id=" + id + "]");
+    return template.content;
+};
+
+module.exports = templateService;
 },{}]},{},[1]);

@@ -7,6 +7,7 @@ MainMenuProto.createdCallback = function() {
 
 MainMenuProto.attachedCallback = function() {
     console.log("main menu attached callback");
+    this.appendChild(clone);
 };
 
 MainMenuProto.addItem = function(options) {
