@@ -1,7 +1,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var parametersService = require("./parametersService");
 var mainMenu = require("./main-menu");
-require("./services/templateService");
+require("./services/htmlTemplateService");
 
 var mainMenuItems = [
     {
@@ -28,7 +28,7 @@ var mainMenuItems = [
 
 var Vms = function() {
     this.parameters = null;
-    this.mainMenu = document.querySelector("#main-menu");
+    this.mainMenu = document.querySelector("main-menu");
     this.mainMenu.addItems(mainMenuItems);
 
     var self = this;
@@ -46,17 +46,24 @@ document.addEventListener("DOMContentLoaded", function() {
     var vms = new Vms();
 }, false);
 
-},{"./main-menu":2,"./parametersService":3,"./services/templateService":4}],2:[function(require,module,exports){
+},{"./main-menu":2,"./parametersService":3,"./services/htmlTemplateService":4}],2:[function(require,module,exports){
 var MainMenuProto = Object.create(HTMLElement.prototype);
+var templateService = require("./services/htmlTemplateService");
 
 MainMenuProto.createdCallback = function() {
-    console.log("main menu create callback");
     this.menuItems = [];
 };
 
 MainMenuProto.attachedCallback = function() {
-    console.log("main menu attached callback");
-    this.appendChild(clone);
+    this.template = templateService.getTemplate("mainMenu");
+    this.appendChild(this.template);
+
+    var vue = new Vue({
+        el: this.template,
+        data: {
+            menuItems: this.menuItems
+        }
+    })
 };
 
 MainMenuProto.addItem = function(options) {
@@ -83,7 +90,7 @@ MainMenu = document.registerElement('main-menu', {
 });
 
 module.exports = MainMenuProto;
-},{}],3:[function(require,module,exports){
+},{"./services/htmlTemplateService":4}],3:[function(require,module,exports){
 var ParametersService = {};
 
 ParametersService.parameters = null;
@@ -108,13 +115,13 @@ ParametersService.getParameters = function() {
 
 module.exports = ParametersService;
 },{}],4:[function(require,module,exports){
-var templateService = {};
+var HtmlTemplateService = {};
 
-templateService.getTemplate = function(id) {
+HtmlTemplateService.getTemplate = function(id) {
     var link = document.querySelector('link[rel="import"]');
-    var template = link.import.querySelector("template[id=" + id + "]");
-    return template.content;
+    var template = link.import.querySelector("#" + id);
+    return template;
 };
 
-module.exports = templateService;
+module.exports = HtmlTemplateService;
 },{}]},{},[1]);

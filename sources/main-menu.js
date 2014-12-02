@@ -1,13 +1,20 @@
 var MainMenuProto = Object.create(HTMLElement.prototype);
+var templateService = require("./services/htmlTemplateService");
 
 MainMenuProto.createdCallback = function() {
-    console.log("main menu create callback");
     this.menuItems = [];
 };
 
 MainMenuProto.attachedCallback = function() {
-    console.log("main menu attached callback");
-    this.appendChild(clone);
+    this.template = templateService.getTemplate("mainMenu");
+    this.appendChild(this.template);
+
+    var vue = new Vue({
+        el: this.template,
+        data: {
+            menuItems: this.menuItems
+        }
+    })
 };
 
 MainMenuProto.addItem = function(options) {

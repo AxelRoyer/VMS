@@ -1,6 +1,6 @@
 var parametersService = require("./parametersService");
 var mainMenu = require("./main-menu");
-require("./services/templateService");
+require("./services/htmlTemplateService");
 
 var mainMenuItems = [
     {
@@ -27,7 +27,7 @@ var mainMenuItems = [
 
 var Vms = function() {
     this.parameters = null;
-    this.mainMenu = document.querySelector("#main-menu");
+    this.mainMenu = document.querySelector("main-menu");
     this.mainMenu.addItems(mainMenuItems);
 
     var self = this;
