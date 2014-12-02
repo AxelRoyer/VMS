@@ -1,13 +1,13 @@
-html, body {
-    height: 100%;
-}
-
 body {
-    font-family: 'HelveticaNeue-Light','HelveticaNeue',Helvetica,Arial,sans-serif;
-    background-color: red;
+    background-color: whitesmoke;
+    font-family: arial;
 }
 
-* {
-    box-sizing: border-box;
+header {
+    height: 70px;
+    background-color: $header-background;
 }
 
+.page-layout {
+    height: calc(100% - 70px);
+}

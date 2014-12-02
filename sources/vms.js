@@ -1,25 +1,25 @@
 var parametersService = require("./parametersService");
 var mainMenu = require("./main-menu");
-require("./services/htmlTemplateService");
+require("./services/templateService");
 
 var mainMenuItems = [
     {
-        "link": "#/myProfile",
+        "link": "myProfile",
         "label": "My profile",
         "id": "1"
     },
     {
-        "link": "#/volunteers",
+        "link": "volunteers",
         "label": "Volunteers",
         "id": "2"
     },
     {
-        "link": "#/stock",
+        "link": "stock",
         "label": "Stock",
         "id": "3"
     },
     {
-        "link": "#/parameters",
+        "link": "parameters",
         "label": "Parameters",
         "id": "4"
     }

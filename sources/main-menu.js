@@ -1,5 +1,5 @@
 var MainMenuProto = Object.create(HTMLElement.prototype);
-var templateService = require("./services/htmlTemplateService");
+var templateService = require("./services/templateService");
 
 MainMenuProto.createdCallback = function() {
     this.menuItems = [];

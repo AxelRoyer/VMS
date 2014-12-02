@@ -6,6 +6,7 @@
   "license": "ISC",
   "private": true,
   "dependencies": {
+    "bourbon": "0.0.2",
     "browserify": "^6.3.3",
     "gulp": "^3.8.10",
     "gulp-mocha": "^2.0.0",

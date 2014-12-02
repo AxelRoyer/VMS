@@ -1,26 +1,26 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 var parametersService = require("./parametersService");
 var mainMenu = require("./main-menu");
-require("./services/htmlTemplateService");
+require("./services/templateService");
 
 var mainMenuItems = [
     {
-        "link": "#/myProfile",
+        "link": "myProfile",
         "label": "My profile",
         "id": "1"
     },
     {
-        "link": "#/volunteers",
+        "link": "volunteers",
         "label": "Volunteers",
         "id": "2"
     },
     {
-        "link": "#/stock",
+        "link": "stock",
         "label": "Stock",
         "id": "3"
     },
     {
-        "link": "#/parameters",
+        "link": "parameters",
         "label": "Parameters",
         "id": "4"
     }
@@ -46,9 +46,9 @@ document.addEventListener("DOMContentLoaded", function() {
     var vms = new Vms();
 }, false);
 
-},{"./main-menu":2,"./parametersService":3,"./services/htmlTemplateService":4}],2:[function(require,module,exports){
+},{"./main-menu":2,"./parametersService":3,"./services/templateService":4}],2:[function(require,module,exports){
 var MainMenuProto = Object.create(HTMLElement.prototype);
-var templateService = require("./services/htmlTemplateService");
+var templateService = require("./services/templateService");
 
 MainMenuProto.createdCallback = function() {
     this.menuItems = [];
@@ -90,7 +90,7 @@ MainMenu = document.registerElement('main-menu', {
 });
 
 module.exports = MainMenuProto;
-},{"./services/htmlTemplateService":4}],3:[function(require,module,exports){
+},{"./services/templateService":4}],3:[function(require,module,exports){
 var ParametersService = {};
 
 ParametersService.parameters = null;
@@ -115,13 +115,13 @@ ParametersService.getParameters = function() {
 
 module.exports = ParametersService;
 },{}],4:[function(require,module,exports){
-var HtmlTemplateService = {};
+var templateService = {};
 
-HtmlTemplateService.getTemplate = function(id) {
+templateService.getTemplate = function(id) {
     var link = document.querySelector('link[rel="import"]');
     var template = link.import.querySelector("#" + id);
     return template;
 };
 
-module.exports = HtmlTemplateService;
+module.exports = templateService;
 },{}]},{},[1]);

@@ -3,6 +3,7 @@ var sass = require('gulp-sass');
 var mocha = require('gulp-mocha');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
+var bourbon = require('bourbon');
 
 var paths = {};
 
@@ -20,6 +21,9 @@ paths.jsFiles = [
 
 gulp.task('sass-build', function () {
 	gulp.src(paths.styles)
+		.pipe(sass({
+			includePaths: bourbon.includePaths
+		}))
 		.on("error", errorAlert)
 		.pipe(gulp.dest('./style'));
 });
