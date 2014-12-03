@@ -83,3 +83,9 @@ main-menu {
       text-decoration: none;
       color: grey;
       padding-left: 20px; }
+      main-menu .menu-item > a:hover, main-menu .menu-item > a:active {
+        color: #1a1a1a; }
+    main-menu .menu-item.selected {
+      background-color: #939393; }
+      main-menu .menu-item.selected > a {
+        color: white; }

@@ -16,6 +16,18 @@ main-menu {
             text-decoration: none;
             color: $main-menu-color;
             padding-left: 20px;
+
+            &:hover, &:active {
+                color:$dark-gray;
+            }
+        }
+
+        &.selected {
+            background-color: $gray;
+
+            > a {
+                color: $white;
+            }
         }
     }
 }
